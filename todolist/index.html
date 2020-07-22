@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <title>Ron's Todo List</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
+      integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA=="
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="section">
+      <div class="info">
+        <h2 class="name">ToDoList</h2>
+        <p class="date"></p>
+      </div>
+      <div class="content">
+        <ul class="list"></ul>
+        <p class="message">
+          You have nothing to do :-)<br />
+          [Enter] to add a ToDo<br />
+          [Down], [Up] Change selection<br />
+          [Page Down], [Page Up] Move selected Item<br />
+          [Ctrl + .] Select everything<br />
+          [Escape] Deselect<br />
+          [Delete] Delete selection
+        </p>
+      </div>
+      <div class="options">
+        <button class="add"><i class="fas fa-plus-square"></i></button>
+        <button class="delete"><i class="fas fa-trash"></i></button>
+        <button class="down"><i class="fas fa-caret-square-down"></i></button>
+        <button class="up"><i class="fas fa-caret-square-up"></i></button>
+        <button class="completed">
+          <i class="fas fa-check-square"></i>
+        </button>
+        <button class="sel-all"><i class="fas fa-list-alt"></i></button>
+        <button class="desel-all">
+          <i class="far fa-list-alt"></i>
+        </button>
+      </div>
+      <div class="input">
+        <input
+          type="text"
+          placeholder="Enter Todo...."
+          class="list-input"
+          id="listinput"
+        />
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

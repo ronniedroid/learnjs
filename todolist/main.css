@@ -1,0 +1,221 @@
+:root {
+  --bg: #34405b;
+  --fg: #f4f1de;
+  --red: #e07a5f;
+  --green: #81b29a;
+  --yellow: #f2cc8f;
+}
+
+*,
+::after,
+::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  font-family: sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(var(--green), var(--yellow));
+}
+
+.section {
+  width: 100%;
+  height: 100%;
+  margin: 5vh 5vw;
+  display: grid;
+  grid-template:
+    "info info" auto
+    "options list" auto
+    ". input" auto / 1fr 12fr;
+  border: 5px solid var(--bg);
+  background-color: var(--bg);
+}
+
+.info {
+  grid-area: info;
+  display: flex;
+  padding: 8px;
+  background-color: var(--bg);
+  justify-content: space-around;
+  align-items: center;
+  height: 10vh;
+}
+
+.name {
+  color: var(--fg);
+}
+
+.date {
+  color: var(--fg);
+}
+
+.content {
+  grid-area: list;
+  background-color: var(--fg);
+  overflow-y: scroll;
+  position: relative;
+  height: 68vh;
+}
+
+.message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.4;
+  text-align: left;
+}
+
+.list {
+  list-style: none;
+  padding: 8px 8px;
+}
+
+.list li {
+  background-color: var(--bg);
+  color: var(--fg);
+  padding: 6px 15px;
+  margin: 4px 0;
+  cursor: pointer;
+}
+
+.input {
+  grid-area: input;
+  padding: 5px;
+  background-color: var(--bg);
+  color: var(--bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+}
+
+.list-input {
+  border: none;
+  background-color: var(--fg);
+  color: var(--bg);
+  padding: 5px;
+  margin: 5px;
+  width: 100%;
+}
+
+.options {
+  grid-area: options;
+  display: grid;
+  grid-template:
+    "up" auto
+    "down" auto
+    "sel" auto
+    "desel" auto
+    "completed" auto
+    "delete" auto
+    "add" auto / 1fr;
+  background-color: var(--bg);
+  place-items: center;
+}
+
+.options button {
+  border: none;
+  color: var(--bg);
+  margin: 8px;
+  padding: 8px;
+  width: 3rem;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.options button:hover {
+  opacity: 0.8;
+}
+
+.add {
+  grid-area: add;
+  background-color: var(--green);
+}
+
+.delete {
+  grid-area: delete;
+  background-color: var(--red);
+}
+
+.down {
+  grid-area: down;
+  background-color: var(--yellow);
+}
+
+.up {
+  grid-area: up;
+  background-color: var(--yellow);
+}
+
+.sel-all {
+  grid-area: sel;
+  background-color: var(--yellow);
+}
+
+.desel-all {
+  grid-area: desel;
+  background-color: var(--yellow);
+}
+
+.completed {
+  grid-area: completed;
+  background-color: var(--yellow);
+}
+
+p.hiden {
+  display: none;
+}
+
+li.highlight {
+  background-color: var(--red);
+}
+
+li.completed {
+  opacity: 0.6;
+  text-decoration-line: line-through;
+}
+
+@media only screen and (max-width: 400px) {
+  .section {
+    grid-template:
+      "info info" auto
+      "list list" auto
+      "input input" auto
+      "options options" auto / 1fr 1fr;
+  }
+
+  .content {
+    height: 70vh;
+  }
+
+  .input {
+    height: 5vh;
+  }
+
+  .options {
+    grid-template: "up down sel desel completed delete add" auto / 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    height: 5vh;
+  }
+
+  .options button {
+    margin: 5px;
+    padding: 5px;
+    width: 1.5rem;
+    font-weight: 600;
+    font-size: 0.8rem;
+  }
+  .info {
+    flex-direction: column;
+  }
+}
